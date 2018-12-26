@@ -70,13 +70,25 @@ class processFile():
         the type of files contains in the directory
         """
         if file_type == "csv":
-            files = glob("{}/**.csv".format(directory_path))
+            try:
+                files = glob("{}/**.csv".format(directory_path))
+            except:
+                files = None
         elif file_type == "h5":
-            files = glob("{}/**.h5".format(directory_path))
+            try:
+                files = glob("{}/**.h5".format(directory_path))
+            except:
+                files = None
         elif file_type == "json":
-            files = glob("{}/**.json".format(directory_path))
+            try:
+                files = glob("{}/**.json".format(directory_path))
+            except:
+                files = None
         elif file_type == "all":
-            files = glob("{}/*".format(directory_path))
+            try:
+                files = glob("{}/*".format(directory_path))
+            except:
+                files = None
         return files
 
 
